@@ -2,10 +2,14 @@
 
 Code for several classification algorithms.
 
-## Logistic Regression (logistic.m)
+## lda.m: Linear Discriminant Analysis
 
-Matlab code that performs [logistic regression](http://en.wikipedia.org/wiki/Logistic_regression). The algorithm solves the classification problem of predicting the outcome of a binary categorical variable that depends on one or more predictor variables. 
+Perform multiclass classification based on a single predictor variable using [linear discriminant analysis](http://en.wikipedia.org/wiki/Linear_discriminant_analysis).
+
+## logistic.m: Logistic Regression
+
+Perform binary classification based on one or more predictor variables using [logistic regression](http://en.wikipedia.org/wiki/Logistic_regression). 
 
 ## Coming soon:
 
-* Linear discriminant analysis
+* Quadratic discriminant analysis
