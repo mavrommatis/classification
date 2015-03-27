@@ -1,19 +1,20 @@
-function [theta,h,g,H,Niter] = logistic(x,y,theta0,tol)
-% [theta,h,g,H,Niter] = logistic(x,y,theta0,tol)
+function [h,theta,g,H,Niter] = logistic(X,y,theta0,tol)
+% [theta,h,g,H,Niter] = logistic(X,y,theta0,tol)
 %
-% Performs logistic regression in a set of (x,y) measurements, where x is
-% (m x n) and y is (m x 1) and takes the values {0,1}.
+% Performs logistic regression for solving the classification problem of 
+% predicting the outcome of a binary categorical variable that depends on 
+% one or more predictor variables. 
 %
-% Inputs:
-%   x = (m x n) matrix, where m = number of training examples (data) and n
-%       is number of features
-%   y = (m x 1) vector of either 0's or 1's
+% Input:
+%   X = (m x n) design matrix, where m = number of training examples,
+%                                    n = number of features (predictors)
+%   y = (m x 1) vector of either class labels (0 or 1)
 %   theta0 = (n x 1) vector of initial guess on unknown parameters
 %   tol = tolerance for convergence
 %
-% Outputs:
-%  theta = (n x 1) vector of final estimate of unknown parameters
+% Output:
 %  h = (m x 1) vector of predicted values of logistic function
+%  theta = (n x 1) vector of estimate of coefficients in logistic function
 %  g = (n x 1) gradient vector at the final solution
 %  H = (n x n) Hessian matrix at the final solution
 %  Niter = number of iterations needed for convergence.
@@ -25,6 +26,7 @@ function [theta,h,g,H,Niter] = logistic(x,y,theta0,tol)
 theta = theta0;  
 dtheta = Inf;
 Niter = 0;
+x = X;
 
 % repeat until convergence
 while dtheta > tol
