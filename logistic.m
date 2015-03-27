@@ -1,5 +1,5 @@
 function [h,theta,g,H,Niter] = logistic(X,y,theta0,tol)
-% [theta,h,g,H,Niter] = logistic(X,y,theta0,tol)
+% [h,theta,g,H,Niter] = logistic(X,y,theta0,tol)
 %
 % Performs logistic regression for solving the classification problem of 
 % predicting the outcome of a binary categorical variable that depends on 
